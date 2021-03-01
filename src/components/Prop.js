@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 
 //	Animations
 import { motion } from 'framer-motion';
-import { popup, fadeIn } from '../animation';
+import { popup } from '../animation';
 
 const Prop = ({ propId, propCode, description }) => {
 	return (
 		<>
 			<Link to={`/props/${propId}`}>
 				<motion.div
-					variants={fadeIn}
+					variants={popup}
 					initial="hidden"
 					animate="show"
 					className="prop__container"
