@@ -1,0 +1,17 @@
+//  Utils
+@import './utils/mixins';
+@import './utils/variables';
+@import './utils/globals';
+
+//  Components
+@import './components/navbar';
+@import './components/backdrop';
+@import './components/mobilemenu';
+@import './components/prop';
+@import './components/indivprop';
+@import './components//footer';
+
+//  Screens
+@import './screens/homescreen';
+@import './screens/propsscreen';
+@import './screens/contactscreen';
