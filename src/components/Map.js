@@ -3,6 +3,7 @@ import mapboxgl from 'mapbox-gl';
 
 const lngLat = [-0.256223, 51.5048];
 
+//	Access this
 const Map = () => {
 	mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 

@@ -6,7 +6,7 @@ export const getProps = () => async dispatch => {
 		dispatch({ type: actionTypes.GET_PROPS_REQUEST });
 
 		const { data } = await axios.get(
-			`https://simonsmithbackgrounds.herokuapp.com/api/props?p=1`
+			'https://simonsmithbackgrounds.herokuapp.com/api/props?p=1'
 		);
 
 		dispatch({
