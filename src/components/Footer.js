@@ -15,10 +15,10 @@ const Footer = () => {
 					<p className="footer__subtext">
 						All of the photographs were taken by us at Simon Smith Photography
 					</p>
-					<a href="www.simonsmithphotography.co.uk" className="footer__link">
+					<a href="http://simonsmithphotography.co.uk" className="footer__link">
 						www.simonsmithphotography.co.uk
 					</a>
-					<a href="www.simonsmithphotography.co.uk">
+					<a href="http://simonsmithphotography.co.uk">
 						<img src={photographyLogo} alt="" />
 					</a>
 				</div>
