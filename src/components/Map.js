@@ -6,12 +6,9 @@ mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worke
 
 const lngLat = [-0.256223, 51.5048];
 
-// process.env.REACT_APP_MAPBOX_TOKEN;
-
 //	map time
 const Map = () => {
-	mapboxgl.accessToken =
-		'pk.eyJ1IjoibWF0dC1odGltcyIsImEiOiJja2xqbmFoZXcwcmp1MnZxaWx2anBnb3h5In0.DGlvTwQeN5sWTqOqJYko0A';
+	mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 	useEffect(() => {
 		const map = new mapboxgl.Map({
