@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+
 const lngLat = [-0.256223, 51.5048];
 
 // process.env.REACT_APP_MAPBOX_TOKEN;
