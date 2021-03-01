@@ -5,7 +5,9 @@ export const getProps = () => async dispatch => {
 	try {
 		dispatch({ type: actionTypes.GET_PROPS_REQUEST });
 
-		const { data } = await axios.get(`/api/props?p=1`);
+		const { data } = await axios.get(
+			`https://simonsmithbackgrounds.herokuapp.com/api/props?p=1`
+		);
 
 		dispatch({
 			type: actionTypes.GET_PROPS_SUCCESS,
@@ -26,7 +28,9 @@ export const updateProps = page => async dispatch => {
 	try {
 		dispatch({ type: actionTypes.UPDATE_PROPS_REQUEST });
 
-		const { data } = await axios.get(`api/props?p=${page}`);
+		const { data } = await axios.get(
+			`https://simonsmithbackgrounds.herokuapp.com/api/props?p=${page}`
+		);
 
 		dispatch({
 			type: actionTypes.UPDATE_PROPS_SUCCESS,
@@ -48,7 +52,7 @@ export const getPropsByCat = (p, q, q2, q3, q4) => async dispatch => {
 		dispatch({ type: actionTypes.GET_PROPS_REQUEST });
 
 		const { data } = await axios.get(
-			`/api/props/category?p=${p}&q=${q}&q=${q2}&q=${q3}&q=${q4}`
+			`https://simonsmithbackgrounds.herokuapp.com/api/props/category?p=${p}&q=${q}&q=${q2}&q=${q3}&q=${q4}`
 		);
 
 		dispatch({
@@ -71,7 +75,7 @@ export const updatePropsByCat = (p, q, q2, q3, q4) => async dispatch => {
 		dispatch({ type: actionTypes.UPDATE_PROPS_REQUEST });
 
 		const { data } = await axios.get(
-			`/api/props/category?p=${p}&q=${q}&q=${q2}&q=${q3}&q=${q4}`
+			`https://simonsmithbackgrounds.herokuapp.com/api/props/category?p=${p}&q=${q}&q=${q2}&q=${q3}&q=${q4}`
 		);
 
 		dispatch({
@@ -95,7 +99,9 @@ export const getPropDetails = id => async dispatch => {
 			type: actionTypes.GET_PROP_DETAILS_REQUEST,
 		});
 
-		const { data } = await axios.get(`/api/props/${id}`);
+		const { data } = await axios.get(
+			`https://simonsmithbackgrounds.herokuapp.com/api/props/${id}`
+		);
 
 		dispatch({
 			type: actionTypes.GET_PROP_DETAILS_SUCCESS,
