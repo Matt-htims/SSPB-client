@@ -3,9 +3,12 @@ import mapboxgl from 'mapbox-gl';
 
 const lngLat = [-0.256223, 51.5048];
 
+// process.env.REACT_APP_MAPBOX_TOKEN;
+
 //	map time
 const Map = () => {
-	mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+	mapboxgl.accessToken =
+		'pk.eyJ1IjoibWF0dC1odGltcyIsImEiOiJja2xqbmFoZXcwcmp1MnZxaWx2anBnb3h5In0.DGlvTwQeN5sWTqOqJYko0A';
 
 	useEffect(() => {
 		const map = new mapboxgl.Map({
