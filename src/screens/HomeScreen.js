@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getPropDetails } from '../redux/actions/propActions';
 
 //	Images
 import beans from '../public/beans.jpeg';
@@ -26,6 +29,11 @@ import { useScroll } from '../components/useScroll';
 
 const HomeScreen = () => {
 	const [element, controls] = useScroll();
+
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(getPropDetails('603909d81b50fc0d88ef9d6c'));
+	});
 	return (
 		<motion.div
 			variants={pageAnimation}
