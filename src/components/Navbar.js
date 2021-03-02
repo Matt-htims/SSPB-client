@@ -8,6 +8,7 @@ const Navbar = ({ click, show, close }) => {
 			<div className="navbar__logo">
 				<Link to="/" onClick={close}>
 					<img src={logo} alt="" />
+					<p>HOME</p>
 				</Link>
 			</div>
 			<ul className="navbar__links ">

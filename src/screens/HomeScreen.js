@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { getPropDetails } from '../redux/actions/propActions';
 
 //	Images
@@ -12,6 +12,7 @@ import omelette from '../public/omelette.jpeg';
 import soup from '../public/soup.jpeg';
 import collage from '../public/collage.jpg';
 import logo from '../public/logoGrey.svg';
+import arrow from '../public/arrowBlack.svg';
 
 //	Components
 import ScrollTop from '../components/ScrollTop';
@@ -25,15 +26,21 @@ import {
 	scrollReveal,
 	fade,
 } from '../animation';
-import { useScroll } from '../components/useScroll';
+
+const scrollToRef = ref =>
+	window.scrollTo({ top: ref.current.offsetTop - 150, behavior: 'smooth' });
 
 const HomeScreen = () => {
-	const [element, controls] = useScroll();
+	//	Scroll to seenin section
+	const seenIn = useRef(null);
+	const arrowHandler = () => {
+		scrollToRef(seenIn);
+	};
 
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(getPropDetails('603909d81b50fc0d88ef9d6c'));
-	});
+	}, []);
 	return (
 		<motion.div
 			variants={pageAnimation}
@@ -65,7 +72,7 @@ const HomeScreen = () => {
 				<motion.div variants={fade} className="homescreen__collection-body">
 					<div className="homescreen__collection-bodytext">
 						<h3>An Extensive Collection</h3>
-						<h5>Backgrounds, Boards, Tables and more.</h5>
+						<h5>Backgrounds, boards, tables and more</h5>
 						<p>
 							Simon has a large collection of backgrounds to hire including
 							woods, metals, marble, stone tiles, wooden boards, tables and
@@ -83,18 +90,13 @@ const HomeScreen = () => {
 										<p id="button-text">Explore the collection</p>
 									</div>
 								</Link>
+								<img onClick={arrowHandler} src={arrow} alt="arrow down" />
 							</div>
 						</div>
 					</div>
 				</motion.div>
 			</div>
-			<motion.div
-				variants={scrollReveal}
-				ref={element}
-				animate={controls}
-				initial="hidden"
-				className="homescreen__seenin"
-			>
+			<div className="homescreen__seenin" ref={seenIn}>
 				<div className="homescreen__seenintext">
 					<h1>As seen in...</h1>
 					<h4>
@@ -104,7 +106,7 @@ const HomeScreen = () => {
 						Simon is a food and drink photographer with over 20 years’
 						experience.
 					</p>
-					<p>His backgrounds feature regularly in his shoots</p>
+					<p>His backgrounds feature regularly in his shoots.</p>
 				</div>
 				<img src={soup} alt="soup" />
 				<img src={cheesecake} alt="cheesecake" />
@@ -112,7 +114,7 @@ const HomeScreen = () => {
 				<img src={beans} alt="baked beans" />
 				<img src={buns} alt="chelsea buns" />
 				<img src={omelette} alt="omelette" />
-			</motion.div>
+			</div>
 		</motion.div>
 	);
 };

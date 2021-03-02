@@ -83,8 +83,19 @@
 			}
 			.button-container {
 				display: flex;
-				justify-content: center;
+				justify-content: space-evenly;
 				margin-top: rem(30);
+
+				img {
+					height: 12%;
+					width: 12%;
+					transition: transform 200ms;
+					cursor: pointer;
+
+					&:hover {
+						transform: scale(1.1);
+					}
+				}
 			}
 			&-button {
 				color: $mainBlack;
@@ -286,6 +297,12 @@
 				margin-top: rem(40);
 				max-width: 100%;
 				width: 100%;
+
+				.button-container {
+					img {
+						display: none;
+					}
+				}
 
 				&collage {
 					width: 100%;

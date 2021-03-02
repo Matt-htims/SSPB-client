@@ -27,6 +27,18 @@
 		height: rem(49px);
 		transition: transform 200ms;
 
+		a {
+			display: flex;
+			align-items: center;
+
+			p {
+				font-weight: 500;
+				font-size: 1rem;
+				color: #6e6e6e;
+				margin-left: 1rem;
+			}
+		}
+
 		&:hover {
 			transform: scale(1.1);
 		}
@@ -102,6 +114,14 @@
 @media (max-width: 960px) {
 	.navbar {
 		padding: 0rem rem(30);
+
+		&__logo {
+			a {
+				p {
+					display: none;
+				}
+			}
+		}
 	}
 	.navbar__links {
 		display: none;
