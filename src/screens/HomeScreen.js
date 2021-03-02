@@ -106,7 +106,7 @@ const HomeScreen = () => {
 						Simon is a food and drink photographer with over 20 years’
 						experience.
 					</p>
-					<p>His backgrounds feature regularly in his shoots.</p>
+					<p>The backgrounds feature regularly in his shoots.</p>
 				</div>
 				<img src={soup} alt="soup" />
 				<img src={cheesecake} alt="cheesecake" />

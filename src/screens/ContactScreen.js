@@ -4,6 +4,7 @@ import logo from '../public/logoGrey.svg';
 import phone from '../public/phoneBlack.svg';
 import mail from '../public/mailBlack.svg';
 import location from '../public/locationBlack.svg';
+import camera from '../public/camera.svg';
 
 import Map from '../components/Map';
 
@@ -46,20 +47,26 @@ const ContactScreen = () => {
 									<p>simon@simonsmithphotography.com</p>
 								</a>
 							</motion.div>
+							<motion.div variants={fade} className="contactscreen__website">
+								<a href="https://www.simonsmithphotography.co.uk">
+									<img src={camera} alt="" />
+									<p>www.simonsmithphotography.co.uk</p>
+								</a>
+							</motion.div>
 							<motion.div variants={fade} className="contactscreen__location">
-								<img src={location} alt="" />
-								<div className="footer__address">
-									<a
-										target="_blank"
-										href="https://www.google.com/maps/place/Simon+Smith+Photography/@51.5048292,-0.2584012,17z/data=!3m1!4b1!4m5!3m4!1s0x48760e23278e6801:0xd69a7f094e189ec9!8m2!3d51.5048259!4d-0.2562072"
-									>
+								<a
+									target="_blank"
+									href="https://www.google.com/maps/place/Simon+Smith+Photography/@51.5048292,-0.2584012,17z/data=!3m1!4b1!4m5!3m4!1s0x48760e23278e6801:0xd69a7f094e189ec9!8m2!3d51.5048259!4d-0.2562072"
+								>
+									<img src={location} alt="" />
+									<div className="footer__address">
 										<p className="first-line">6 Sun Studios</p>
 										<p>30 Warple Way</p>
 										<p>Acton</p>
 										<p>London</p>
 										<p>W3 0RX</p>
-									</a>
-								</div>
+									</div>
+								</a>
 							</motion.div>
 						</motion.div>
 						<motion.div variants={fade} className="contactscreen__map">

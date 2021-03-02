@@ -50,8 +50,10 @@
 		margin-bottom: rem(150);
 		&image {
 			overflow: hidden;
+
 			img {
 				width: 100%;
+				object-fit: cover;
 			}
 		}
 		&-body {
@@ -289,7 +291,7 @@
 					padding: 0;
 
 					max-height: rem(650);
-					object-fit: cover;
+					object-fit: contain;
 				}
 			}
 
@@ -388,7 +390,7 @@
 					// display: none;
 
 					max-height: rem(250);
-					object-fit: cover;
+					object-fit: contain;
 				}
 			}
 

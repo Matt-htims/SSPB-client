@@ -73,8 +73,19 @@
 		}
 	}
 
+	&__website {
+		padding-bottom: rem(40);
+
+		a {
+			display: flex;
+			align-items: center;
+		}
+	}
+
 	&__location {
-		display: flex;
+		a {
+			display: flex;
+		}
 
 		p {
 			&:not(:last-child) {
