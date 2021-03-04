@@ -14,7 +14,7 @@ import RequestSuccess from '../components/RequestSuccess';
 const validationSchema = Yup.object().shape({
 	email: Yup.string().email().required('Email is required'),
 	name: Yup.string().required('Name is required'),
-	number: Yup.string(),
+	number: Yup.number().typeError('Must be a number'),
 	message: Yup.string(),
 });
 
@@ -107,7 +107,7 @@ const RequestInfo = () => {
 
 									<div className="form-row">
 										<Field
-											type="number"
+											type="string"
 											name="number"
 											id="number"
 											placeholder="Phone number"
