@@ -10,8 +10,12 @@
 @import './components/prop';
 @import './components/indivprop';
 @import './components//footer';
+@import './components/requestProp';
+@import './components//requestInfo';
+@import './components/requestSuccess';
 
 //  Screens
 @import './screens/homescreen';
 @import './screens/propsscreen';
 @import './screens/contactscreen';
+@import './screens/requestScreen';

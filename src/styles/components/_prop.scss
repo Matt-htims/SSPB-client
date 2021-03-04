@@ -3,18 +3,14 @@
 	height: rem(550);
 	cursor: pointer;
 	position: relative;
+	transition: ease 200ms all;
 
-	// &::before {
-	// 	content: '';
-	// 	position: absolute;
-	// 	display: block;
-	// 	right: -21px;
-	// 	bottom: 0px;
-	// 	height: 700px;
-	// 	width: 1px;
-	// 	background-color: $mainBlack;
-	// 	z-index: 1;
-	// }
+	&:hover {
+		img {
+			max-width: 72%;
+			max-height: 72%;
+		}
+	}
 
 	&__image {
 		display: flex;
@@ -29,6 +25,7 @@
 			max-width: 70%;
 			max-height: 70%;
 			transform: rotate(-90deg);
+			transition: all ease 200ms;
 		}
 	}
 

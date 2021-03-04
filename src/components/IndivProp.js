@@ -6,8 +6,11 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../animation';
 
+import cross from '../public/cross.svg';
+
 //	Actions
 import { getPropDetails } from '../redux/actions/propActions';
+import { addToRequest } from '../redux/actions/requestActions';
 
 const IndivProp = () => {
 	const { id } = useParams();
@@ -21,6 +24,12 @@ const IndivProp = () => {
 			dispatch(getPropDetails(id));
 		}
 	}, [dispatch, prop, id]);
+
+	//	Handlers
+
+	const addToRequestHandler = () => {
+		dispatch(addToRequest(prop));
+	};
 
 	return (
 		<>
@@ -51,6 +60,16 @@ const IndivProp = () => {
 										</div>
 										<div className="indivprop__righttext">
 											<p className="cost">{`${prop.hireCost} per week`}</p>
+
+											<div className="button">
+												<button
+													onClick={addToRequestHandler}
+													className="icon-btn add-btn"
+												>
+													<div className="add-icon"></div>
+													<div className="btn-txt">Add</div>
+												</button>
+											</div>
 										</div>
 									</div>
 								</div>

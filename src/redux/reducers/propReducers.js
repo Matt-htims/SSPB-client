@@ -29,10 +29,11 @@ export const getPropsReducer = (state = { props: [] }, action) => {
 				loading: true,
 			};
 		case actionTypes.UPDATE_PROPS_SUCCESS:
+			const combinedProps = [...state.props, ...action.payload.docs];
 			return {
 				...state,
 				loading: false,
-				props: [...state.props, ...action.payload.docs],
+				props: combinedProps,
 				pageDetails: {
 					page: action.payload.page,
 					totalPages: action.payload.totalPages,

@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen';
 import PropsScreen from './screens/PropsScreen';
 import ContactScreen from './screens/ContactScreen';
 import MobileMenu from './components/MobileMenu';
+import RequestScreen from './screens/RequestScreen';
 
 //	Components
 import Navbar from './components/Navbar';
@@ -23,7 +24,10 @@ function App() {
 	const [propToggle, setPropToggle] = useState(false);
 
 	const toggle = () => setMenuToggle(!menuToggle);
-	const close = () => setMenuToggle(false);
+	const close = () => {
+		setMenuToggle(false);
+		setPropToggle(false);
+	};
 
 	return (
 		<Router>
@@ -43,6 +47,7 @@ function App() {
 						<PropsScreen setPropToggle={setPropToggle} />
 					</Route>
 					<Route exact path="/contact" component={ContactScreen} />
+					<Route exact path="/request" component={RequestScreen} />
 				</Switch>
 			</main>
 
