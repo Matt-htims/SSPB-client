@@ -44,7 +44,7 @@ const RequestInfo = () => {
 						if (props.length > 0) {
 							const propsList = props.map(prop => prop.code + '   ');
 							try {
-								emailjs.send('service_wnuxll9', 'template_xwcldoo', {
+								emailjs.send('service_rfzeoc8', 'template_xwcldoo', {
 									user_email: email,
 									user_name: name,
 									user_number: number,
