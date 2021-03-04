@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import emailjs, { init } from 'emailjs-com';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -16,12 +15,14 @@ const validationSchema = Yup.object().shape({
 	email: Yup.string().email().required('Email is required'),
 	name: Yup.string().required('Name is required'),
 	number: Yup.string(),
+	message: Yup.string(),
 });
 
 const initialValues = {
 	name: '',
 	email: '',
 	number: '',
+	message: '',
 };
 
 init('user_FiCHL0g9Wh5oDIJ5uqFXJ');
@@ -40,7 +41,7 @@ const RequestInfo = () => {
 					initialValues={initialValues}
 					validationSchema={validationSchema}
 					onSubmit={(values, { resetForm }) => {
-						const { name, email, number } = values;
+						const { name, email, number, message } = values;
 						if (props.length > 0) {
 							const propsList = props.map(prop => prop.code + '   ');
 							try {
@@ -48,6 +49,7 @@ const RequestInfo = () => {
 									user_email: email,
 									user_name: name,
 									user_number: number,
+									user_message: message,
 									props: propsList,
 								});
 							} catch (error) {
@@ -115,6 +117,24 @@ const RequestInfo = () => {
 										/>
 										<ErrorMessage
 											name="number"
+											component="span"
+											className="error"
+										/>
+									</div>
+
+									<div className="form-row comment">
+										<Field
+											component="textarea"
+											type="message"
+											name="message"
+											id="message"
+											placeholder="Comments"
+											className={
+												errors.message && touched.message ? 'input-error' : null
+											}
+										/>
+										<ErrorMessage
+											name="message"
 											component="span"
 											className="error"
 										/>

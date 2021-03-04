@@ -5,6 +5,10 @@ import { setMessageFalse } from '../redux/actions/requestMessageAction';
 
 import cross from '../public/cross.svg';
 
+//	Animations
+import { motion } from 'framer-motion';
+import { fade } from '../animation';
+
 const RequestSuccess = () => {
 	const dispatch = useDispatch();
 
@@ -13,7 +17,7 @@ const RequestSuccess = () => {
 		dispatch(setMessageFalse());
 	};
 	return (
-		<div className="requestsuccess">
+		<motion.div variants={fade} className="requestsuccess">
 			<img onClick={closeMessageHandler} src={cross} alt="close" />
 			<div className="requestsuccess__container">
 				<div className="requestsuccess__title">
@@ -25,7 +29,7 @@ const RequestSuccess = () => {
 					</p>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
