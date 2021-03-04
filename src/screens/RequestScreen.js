@@ -50,7 +50,7 @@ const RequestScreen = () => {
 			>
 				<div className="requestscreen__title">
 					<motion.div variants={fade} className="requestscreen__titletext">
-						<h1>Request basket</h1>
+						<h1>Check availability</h1>
 						<div className="requestscreen__titlenum">
 							<h3>
 								{props.length ? props.length : 0}{' '}

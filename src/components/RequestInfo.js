@@ -15,7 +15,7 @@ import RequestSuccess from '../components/RequestSuccess';
 const validationSchema = Yup.object().shape({
 	email: Yup.string().email().required('Email is required'),
 	name: Yup.string().required('Name is required'),
-	number: Yup.number().required('Phone number is required'),
+	number: Yup.string(),
 });
 
 const initialValues = {
