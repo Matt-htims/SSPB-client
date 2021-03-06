@@ -18,7 +18,7 @@ const Prop = ({ propId, propCode, description }) => {
 					<div className="prop">
 						<div className="prop__image">
 							<img
-								src={`https://cdn.image4.io/gallon/${propCode}.jpg`}
+								src={`https://res.cloudinary.com/gallon/image/upload/v1615035731/${propCode}.jpg`}
 								alt="board"
 							/>
 						</div>

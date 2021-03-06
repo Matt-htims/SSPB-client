@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../animation';
 
-import cross from '../public/cross.svg';
+// https://cdn.image4.io/gallon/${prop.code}.jpg
 
 //	Actions
 import { getPropDetails } from '../redux/actions/propActions';
@@ -47,7 +47,7 @@ const IndivProp = () => {
 							<div className="indivprop__container">
 								<div className="indivprop__image">
 									<img
-										src={`https://cdn.image4.io/gallon/${prop.code}.jpg`}
+										src={`https://res.cloudinary.com/gallon/image/upload/v1615035731/${prop.code}.jpg`}
 										alt="board"
 									/>
 								</div>
