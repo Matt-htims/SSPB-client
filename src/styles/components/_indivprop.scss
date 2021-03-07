@@ -1,6 +1,6 @@
 .indivprop {
 	width: 70%;
-	height: 70%;
+	height: 80%;
 	min-height: rem(400);
 	position: fixed;
 	left: 15%;
@@ -17,7 +17,7 @@
 	}
 
 	&__image {
-		height: 75%;
+		height: 70%;
 		width: 100%;
 		display: flex;
 		align-items: center;
@@ -32,7 +32,7 @@
 	}
 
 	.text {
-		height: 25%;
+		height: 30%;
 		background-color: $mainWhite;
 
 		width: 100%;
@@ -165,7 +165,7 @@
 
 @media (min-width: 1460px) {
 	.indivprop {
-		height: 70%;
+		height: 80%;
 		width: 60%;
 		left: 20%;
 	}
@@ -173,7 +173,7 @@
 
 @media (min-width: 2000px) {
 	.indivprop {
-		height: 70%;
+		height: 80%;
 		width: 50%;
 		left: 25%;
 	}
@@ -181,7 +181,7 @@
 
 @media (min-width: 2600px) {
 	.indivprop {
-		height: 70%;
+		height: 80%;
 		width: 40%;
 		left: 30%;
 	}
