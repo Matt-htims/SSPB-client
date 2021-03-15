@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 //  Components
 import Prop from '../components/Prop';
@@ -12,6 +13,27 @@ import {
 import { updateCategory } from '../redux/actions/categoryActions';
 
 const PropscreenPropContainer = () => {
+	//	Media Queries
+	const oneWide = useMediaQuery({ query: '(max-width: 683px)' });
+	const twoWide = useMediaQuery({ query: '(max-width: 1388px)' });
+	const threeWide = useMediaQuery({ query: '(max-width: 1848px)' });
+	const fourWide = useMediaQuery({ query: '(max-width: 2308px)' });
+
+	const scrollToRef = ref =>
+		window.scrollTo({
+			top:
+				ref.current.scrollHeight -
+				(oneWide
+					? 9500
+					: twoWide
+					? 5000
+					: threeWide
+					? 4500
+					: fourWide
+					? 3500
+					: 3000),
+		});
+
 	const dispatch = useDispatch();
 	const getProps = useSelector(state => state.getProps);
 	const { props, loading, error, pageDetails } = getProps;
@@ -21,8 +43,10 @@ const PropscreenPropContainer = () => {
 		dispatch(listProps());
 	}, [dispatch]);
 
+	const propContainer = useRef(null);
+
 	useEffect(() => {
-		window.scrollTo({ bottom: 0 });
+		scrollToRef(propContainer);
 	}, [props, loading]);
 
 	//	Doing something on scroll
@@ -74,7 +98,7 @@ const PropscreenPropContainer = () => {
 	// }, []);
 
 	return (
-		<div className="propsscreen__props">
+		<div className="propsscreen__props" ref={propContainer}>
 			{props && (
 				<>
 					{loading ? (
