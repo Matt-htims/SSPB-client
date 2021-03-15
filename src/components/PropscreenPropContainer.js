@@ -21,6 +21,10 @@ const PropscreenPropContainer = () => {
 		dispatch(listProps());
 	}, [dispatch]);
 
+	useEffect(() => {
+		window.scrollTo({ bottom: 0 });
+	}, [props, loading]);
+
 	//	Doing something on scroll
 
 	// const loadMore = () => {
