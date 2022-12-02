@@ -8,7 +8,7 @@ import { popup } from '../animation';
 const Prop = ({ propId, propCode, description }) => {
 	return (
 		<>
-			<Link to={`/props/${propId}`}>
+			<Link to={`/props/${propId}`} className="prop__link">
 				<motion.div
 					variants={popup}
 					initial="hidden"
