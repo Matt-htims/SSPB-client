@@ -26,14 +26,14 @@ const Navbar = ({ click, show, close }) => {
 					</NavLink>
 				</li>
 				<li className="cart">
-					<NavLink onClick={close} activeClassName="cartActive" to="/request">
+					<NavLink onClick={close} activeClassName="cartActive" className="cartLink" to="/request">
 						<img src={cart} alt="" />
 						<p>{props.length ? props.length : 0}</p>
 					</NavLink>
 				</li>
 			</ul>
 			<li className="cart-mobile">
-				<NavLink onClick={close} activeClassName="cartActive" to="/request">
+				<NavLink onClick={close} activeClassName="cartActive" className="cartLink" to="/request">
 					<img src={cart} alt="" />
 					<p>{props.length ? props.length : 0}</p>
 				</NavLink>

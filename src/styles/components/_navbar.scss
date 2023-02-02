@@ -93,6 +93,12 @@
 					}
 				}
 			}
+
+			.cartLink {
+				&::before {
+					content: none;
+				}
+			}
 		}
 	}
 
